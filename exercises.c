@@ -98,8 +98,9 @@ void copia_pila(Stack* P1, Stack* P2) {
    }
 
    while(top(aux) != -1){
-      push(P1, top(aux));
-      push(P2, top(aux));
+      int elemento = top(aux);
+      push(P1, elemento);
+      push(P2, elemento);
       pop(aux);
    }
       

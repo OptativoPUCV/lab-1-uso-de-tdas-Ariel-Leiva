@@ -176,3 +176,37 @@ exercises.c:100:19: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7557885
+Wed, Mar 19, 2025  9:20:32 AM: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'copia_pila':
+exercises.c:95:18: error: comparison between pointer and integer [-Werror]
+    while(top(P1) != -1){
+                  ^~
+exercises.c:100:19: error: comparison between pointer and integer [-Werror]
+    while(top(aux) != -1){
+                   ^~
+exercises.c:101:22: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+       int elemento = top(aux);
+                      ^~~
+exercises.c:102:16: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+       push(P1, elemento);
+                ^~~~~~~~
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'int'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:103:16: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+       push(P2, elemento);
+                ^~~~~~~~
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'int'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+aa44351
