@@ -145,3 +145,14 @@ Wed, Mar 19, 2025  9:05:34 AM:
  tests:  2|3
 total_score: 20/70
 2f98fcf
+Wed, Mar 19, 2025  9:08:33 AM: 
+ exercises.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'eliminaElementos':
+exercises.c:81:24: error: comparison between pointer and integer [-Werror]
+       if(elementoLista == elem) popCurrent(L);
+                        ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+e63632f
