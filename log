@@ -70,3 +70,26 @@ Wed, Mar 19, 2025  8:53:27 AM:
  tests:  1|4
 total_score: 10/70
 d19d84b
+Wed, Mar 19, 2025  8:59:26 AM: 
+ exercises.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'sumaLista':
+exercises.c:60:19: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+    int elemento = first(L);
+                   ^~~~~
+exercises.c:61:20: error: array subscript is not an integer
+    int suma = first[L]
+                    ^
+exercises.c:62:4: error: expected ',' or ';' before 'while'
+    while(elemento != NULL){
+    ^~~~~
+exercises.c:61:8: error: unused variable 'suma' [-Werror=unused-variable]
+    int suma = first[L]
+        ^~~~
+exercises.c:60:8: error: unused variable 'elemento' [-Werror=unused-variable]
+    int elemento = first(L);
+        ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+6007331
