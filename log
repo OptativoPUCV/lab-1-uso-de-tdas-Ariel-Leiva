@@ -210,3 +210,43 @@ stack.h:11:6: note: expected 'void *' but argument is of type 'int'
 cc1.exe: all warnings being treated as errors
 Compilation failed
 aa44351
+Wed, Mar 19, 2025  9:22:03 AM: 
+ exercises.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'copia_pila':
+exercises.c:94:11: error: 'P2' redeclared as different kind of symbol
+    Stack *P2 = create_stack();
+           ^~
+exercises.c:93:35: note: previous definition of 'P2' was here
+ void copia_pila(Stack* P1, Stack* P2) {
+                                   ^~
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+    while(top(P1) != -1){
+                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+    while(top(aux) != -1){
+                   ^~
+exercises.c:103:22: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+       int elemento = top(aux);
+                      ^~~
+exercises.c:104:16: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+       push(P1, elemento);
+                ^~~~~~~~
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'int'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:105:16: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+       push(P2, elemento);
+                ^~~~~~~~
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'int'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8e2caac
