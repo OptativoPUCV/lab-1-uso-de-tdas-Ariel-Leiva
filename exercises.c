@@ -114,28 +114,26 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-int largo(char *palabra){
-   int contador = 0;
-   for(int i = 0; palabra[i] != '\0'; i++)
+size_t largo(char *palabra){
+   size_t contador = 0;
+   for(size_t i = 0; palabra[i] != '\0'; i++)
       contador++;
    return contador;   
 }
 
 int parentesisBalanceados(char *cadena){
    Stack *par_izq = create_stack(); 
-   int largoChar = largo(cadena);
+   size_t largoChar = largo(cadena);
    
    if(largoChar % 2 != 0) return 0;
 
-   for(int i = 0; i < largo; i++){
+   for(size_t i = 0; i < largo; i++){
       if(i < (largoChar/2)) push(par_izq, &cadena[i]);
       else{
-         if(top(par_izq) == ')') pop(par_izq);
-         else if(top(par_izq) == '}') pop(par_izq);
-         else if(top(par_izq) == ']') pop(par_izq);
-         else return 1;
+         if( top(par_izq) == ')' || top(par_izq) == '}' || top(par_izq) == ']' ) pop(par_izq);
+         else return 0;
       }
    }
-   return 0;
+   return 1;
 }
 
