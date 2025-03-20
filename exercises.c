@@ -124,7 +124,7 @@ size_t largo(char *palabra){
 int parentesisBalanceados(char *cadena){
    return 1;
    
-   /*Stack *pila = create_stack();
+   Stack *pila = create_stack();
    
    size_t largoCadena = largo(cadena);
    if(largoCadena % 2 == 0) return 1;
@@ -141,7 +141,7 @@ int parentesisBalanceados(char *cadena){
       }
    }
 
-   return 1;*/   
+   return 1;  
 }
 
 

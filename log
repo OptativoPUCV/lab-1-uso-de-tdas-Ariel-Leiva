@@ -1957,3 +1957,32 @@ Thu, Mar 20, 2025  5:57:21 PM:
  tests:  5|1
 total_score: 50/70
 da99bd3
+Thu, Mar 20, 2025  5:57:36 PM: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:134:44: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  134 |       if(i < largoCadena) push(pila, cadena[i]);
+      |                                      ~~~~~~^~~
+      |                                            |
+      |                                            char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:137:43: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ')' && top(pila) != '(') return 0;
+      |                                           ^~
+exercises.c:138:48: error: comparison between pointer and integer [-Werror]
+  138 |          else if(cadena[i] == '}' && top(pila) != '{') return 0;
+      |                                                ^~
+exercises.c:139:48: error: comparison between pointer and integer [-Werror]
+  139 |          else if(cadena[i] == ']' && top(pila) != '[') return 0;
+      |                                                ^~
+exercises.c:132:11: error: unused variable 'mitad' [-Werror=unused-variable]
+  132 |    size_t mitad = (largoCadena / 2);
+      |           ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+b2e2843
