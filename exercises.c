@@ -116,8 +116,9 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 size_t largo(char *palabra){
    size_t contador = 0;
-   while(palabra[contador] != '\0')
+   while(palabra[contador] != '\0'){
       contador++;
+   } 
    return contador;   
 }
 
@@ -125,8 +126,8 @@ int parentesisBalanceados(char *cadena){
    Stack *pila = create_stack();
    
    size_t largoCadena = largo(cadena);
-   if(largoCadena % 2 == 0) {
-
+   if(largoCadena % 2 != 0) return 0;
+ 
    size_t mitad = (largoCadena / 2);
 
    for(size_t i = 0; i < largoCadena; i++){
@@ -140,8 +141,7 @@ int parentesisBalanceados(char *cadena){
       }
    }
    return 1;
-   }
-   else return 0;  
+   
 }
 
 
