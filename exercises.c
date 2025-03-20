@@ -122,14 +122,13 @@ int largo(char *palabra){
 }
 
 int parentesisBalanceados(char *cadena){
-   Stack *par_izq = create_stack();
-    
+   Stack *par_izq = create_stack(); 
    int largoChar = largo(cadena);
    
    if(largoChar % 2 != 0) return 0;
 
    for(int i = 0; i < largo; i++){
-      if(i < (largoChar/2)) push(par_izq, cadena[i]);
+      if(i < (largoChar/2)) push(par_izq, &cadena[i]);
       else{
          if(top(par_izq) == ')') pop(par_izq);
          else if(top(par_izq) == '}') pop(par_izq);
