@@ -903,3 +903,48 @@ exercises.c:135:38: error: cast from pointer to integer of different size [-Werr
 cc1.exe: all warnings being treated as errors
 Compilation failed
 8d63c9b
+Thu, Mar 20, 2025  4:27:10 PM: 
+ exercises.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:130:24: error: comparison between pointer and integer [-Werror]
+  130 |    for(size_t i = 0; i < largo; i++){
+      |                        ^
+exercises.c:131:49: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  131 |       if(i < (largoChar/2)) push(par_izq, cadena[i]);
+      |                                           ~~~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:134:33: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  134 |          if(cadena[i] == ')' && (int)(top(par_izq) - cadena[i]) == -1 ) centinela = 1;
+      |                                 ^
+exercises.c:135:38: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  135 |          else if(cadena[i] == '}' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
+      |                                      ^
+exercises.c:136:38: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  136 |          else if(cadena[i] == ']' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
+      |                                      ^
+exercises.c:137:13: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  137 |          if(centinela = 0) return 0;
+      |             ^~~~~~~~~
+exercises.c:138:27: error: expected ';' before '}' token
+  138 |          else pop(par_izq)
+      |                           ^
+      |                           ;
+  139 |       }
+      |       ~                    
+cc1.exe: all warnings being treated as errors
+Compilation failed
+ba35fe9

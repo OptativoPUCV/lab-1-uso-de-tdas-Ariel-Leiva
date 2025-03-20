@@ -130,10 +130,12 @@ int parentesisBalanceados(char *cadena){
    for(size_t i = 0; i < largo; i++){
       if(i < (largoChar/2)) push(par_izq, cadena[i]);
       else{
-         if(cadena[i] == ')' && (int)(top(par_izq) - cadena[i]) == -1 ) pop(par_izq);
-         else if(cadena[i] == '}' && (int)(top(par_izq) - cadena[i]) == -2 ) pop(par_izq);
-         else if(cadena[i] == ']' && (int)(top(par_izq) - cadena[i]) == -2 ) pop(par_izq); 
-         else return 0;
+         int centinela = 0;
+         if(cadena[i] == ')' && (int)(top(par_izq) - cadena[i]) == -1 ) centinela = 1;
+         else if(cadena[i] == '}' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
+         else if(cadena[i] == ']' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
+         if(centinela = 0) return 0;
+         else pop(par_izq) 
       }
    }
    return 1;
