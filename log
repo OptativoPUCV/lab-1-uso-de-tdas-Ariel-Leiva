@@ -2642,3 +2642,17 @@ Thu, Mar 20, 2025  7:15:46 PM:
  tests:  7|1
 total_score: 60/70
 fccabc7
+Thu, Mar 20, 2025  8:56:45 PM: 
+ exercises.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:137:30: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+exercises.c:137:108: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |                                                                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+6449ab5
