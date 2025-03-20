@@ -2220,3 +2220,20 @@ exercises.c:138:51: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 87f1e2b
+Thu, Mar 20, 2025  6:13:08 PM: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:136:33: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  136 |          if(cadena[i] == ')' && (char)top(pila) != '(') return 0;
+      |                                 ^
+exercises.c:137:33: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  137 |          if(cadena[i] == '}' && (char)top(pila) != '{') return 0;
+      |                                 ^
+exercises.c:138:33: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  138 |          if(cadena[i] == ']' && (char)top(pila) != '[') return 0;
+      |                                 ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+07ac29e
