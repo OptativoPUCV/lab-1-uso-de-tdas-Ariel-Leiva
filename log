@@ -1215,3 +1215,103 @@ exercises.c:137:13: error: suggest parentheses around assignment used as truth v
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a5291fe
+Thu, Mar 20, 2025  4:34:15 PM: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:132:41: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  132 |       if(i < mitad) push(par_izq, cadena[i]);
+      |                                   ~~~~~~^~~
+      |                                         |
+      |                                         char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:135:26: error: passing argument 1 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  135 |          if(strcmp(cadena[i],')') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                    ~~~~~~^~~
+      |                          |
+      |                          char
+In file included from test.c:3:
+C:/msys64/ucrt64/include/string.h:63:34: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                      ~~~~~~~~~~~~^~~~~
+exercises.c:135:30: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  135 |          if(strcmp(cadena[i],')') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                              ^~~
+      |                              |
+      |                              int
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'int'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:135:70: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  135 |          if(strcmp(cadena[i],')') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                                                                ~~~~~~^~~
+      |                                                                      |
+      |                                                                      char
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:136:26: error: passing argument 1 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          if(strcmp(cadena[i],'}') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                    ~~~~~~^~~
+      |                          |
+      |                          char
+C:/msys64/ucrt64/include/string.h:63:34: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                      ~~~~~~~~~~~~^~~~~
+exercises.c:136:30: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          if(strcmp(cadena[i],'}') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                              ^~~
+      |                              |
+      |                              int
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'int'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:136:70: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          if(strcmp(cadena[i],'}') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                                                                ~~~~~~^~~
+      |                                                                      |
+      |                                                                      char
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:137:26: error: passing argument 1 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  137 |          if(strcmp(cadena[i],']') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                    ~~~~~~^~~
+      |                          |
+      |                          char
+C:/msys64/ucrt64/include/string.h:63:34: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                      ~~~~~~~~~~~~^~~~~
+exercises.c:137:30: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  137 |          if(strcmp(cadena[i],']') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                              ^~~
+      |                              |
+      |                              int
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'int'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:137:70: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  137 |          if(strcmp(cadena[i],']') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
+      |                                                                ~~~~~~^~~
+      |                                                                      |
+      |                                                                      char
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'char'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+exercises.c:138:13: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  138 |          if(centinela = 0) return 0;
+      |             ^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+2a0cb3a

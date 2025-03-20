@@ -127,8 +127,9 @@ int parentesisBalanceados(char *cadena){
    
    if(largoChar % 2 != 0) return 0;
 
-   for(size_t i = 0; i < largo; i++){
-      if(i < (largoChar/2)) push(par_izq, cadena[i]);
+   size_t mitad = largoChar / 2;
+   for(size_t i = 0; i < largoChar; i++){
+      if(i < mitad) push(par_izq, cadena[i]);
       else{
          int centinela = 0;
          if(strcmp(cadena[i],')') == 0 && strcmp(top(par_izq), cadena[i]) > 0 ) centinela = 1;
