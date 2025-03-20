@@ -116,9 +116,8 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 size_t largo(char *palabra){
    size_t contador = 0;
-   while(palabra[contador] != '\0'){
+   while(palabra[contador] != '\0')
       contador++;
-   } 
    return contador;   
 }
 
