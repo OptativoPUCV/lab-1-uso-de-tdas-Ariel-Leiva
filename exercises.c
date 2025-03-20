@@ -122,28 +122,22 @@ size_t largo(char *palabra){
 }
 
 int parentesisBalanceados(char *cadena){
-   List *par_izq = create_list();
-   List *par_der = create_list(); 
-   size_t largoChar = largo(cadena);
+   Stack *pila = create_stack();
 
-   if(largoChar % 2 != 0) return 0;
+   size_t largoCadena = largo(cadena);
+   if(largoCadena % 2 != 0) return 0;
 
-   size_t mitad = (largoChar / 2);
-   for(size_t i = 0; i < largoChar; i++){
-      if(i < mitad) pushFront(par_izq, cadena[i]);
-      else pushBack(par_der, cadena[i]);
+   size_t mitad = (largoCadena / 2);
+   for(size_t i = 0; i < largoCadena; i++){
+      if(i < largoCadena) push(pila, cadena[i]);
+
+      else{
+         if(cadena[i] == ')' && top(pila) != '(') return 0;
+         if(cadena[i] == '}' && top(pila) != '{') return 0;
+         if(cadena[i] == ']' && top(pila) != '[') return 0;
+      }
    }
 
-   char izq = first(par_izq);
-   char der = first(par_der); 
-
-   while(izq != NULL && der != NULL){
-      if( izq == '(' && der == ')'  || izq == '{' && der == '}'|| izq == '[' && der == ']'){
-         izq = next(par_izq);
-         der = next(par_der);   
-      }
-      else return 0;
-   }   
    return 1;   
 }
 

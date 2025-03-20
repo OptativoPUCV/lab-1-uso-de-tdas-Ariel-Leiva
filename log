@@ -1719,3 +1719,39 @@ exercises.c:143:14: error: assignment to 'char' from 'void *' makes integer from
 cc1.exe: all warnings being treated as errors
 Compilation failed
 734eff9
+Thu, Mar 20, 2025  5:49:48 PM: 
+ exercises.c | 28 +++++++++++-----------------
+ 1 file changed, 11 insertions(+), 17 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:132:44: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  132 |       if(i < largoCadena) push(pila, cadena[i]);
+      |                                      ~~~~~~^~~
+      |                                            |
+      |                                            char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:135:43: error: comparison between pointer and integer [-Werror]
+  135 |          if(cadena[i] == ')' && top(pila) != '(') return 0;
+      |                                           ^~
+exercises.c:136:43: error: comparison between pointer and integer [-Werror]
+  136 |          if(cadena[i] == '}' && top(pila) != '{') return 0;
+      |                                           ^~
+exercises.c:137:43: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ']' && top(pila) != '[') return 0;
+      |                                           ^~
+exercises.c:130:11: error: unused variable 'mitad' [-Werror=unused-variable]
+  130 |    size_t mitad = (largoCadena / 2);
+      |           ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+389d7f1
