@@ -669,3 +669,39 @@ exercises.c:102:19: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 50ba2ea
+Thu, Mar 20, 2025  3:53:14 PM: 
+ exercises.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:131:21: error: comparison between pointer and integer [-Werror]
+  131 |    for(int i = 0; i < largo; i++){
+      |                     ^
+exercises.c:132:49: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  132 |       if(i < (largoChar/2)) push(par_izq, cadena[i]);
+      |                                           ~~~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:134:26: error: comparison between pointer and integer [-Werror]
+  134 |          if(top(par_izq) == ')') pop(par_izq);
+      |                          ^~
+exercises.c:135:31: error: comparison between pointer and integer [-Werror]
+  135 |          else if(top(par_izq) == '}') pop(par_izq);
+      |                               ^~
+exercises.c:136:31: error: comparison between pointer and integer [-Werror]
+  136 |          else if(top(par_izq) == ']') pop(par_izq);
+      |                               ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+17335ed
