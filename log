@@ -1538,3 +1538,36 @@ exercises.c:136:52: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 505a914
+Thu, Mar 20, 2025  5:02:52 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:132:41: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  132 |       if(i < mitad) push(par_izq, cadena[i]);
+      |                                   ~~~~~~^~~
+      |                                         |
+      |                                         char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:134:46: error: comparison between pointer and integer [-Werror]
+  134 |          if(cadena[i] == ')' && top(par_izq) == '(') pop(par_izq);
+      |                                              ^~
+exercises.c:135:52: error: comparison between pointer and integer [-Werror]
+  135 |          else if (cadena[i] == '}' && top(par_izq) == '{') pop(par_izq);
+      |                                                    ^~
+exercises.c:136:52: error: comparison between pointer and integer [-Werror]
+  136 |          else if (cadena[i] == ']' && top(par_izq) == '[') pop(par_izq);
+      |                                                    ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+4906cb1
