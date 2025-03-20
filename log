@@ -867,3 +867,39 @@ exercises.c:135:61: error: expected expression before '[' token
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0a206c3
+Thu, Mar 20, 2025  4:23:31 PM: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:130:24: error: comparison between pointer and integer [-Werror]
+  130 |    for(size_t i = 0; i < largo; i++){
+      |                        ^
+exercises.c:131:49: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  131 |       if(i < (largoChar/2)) push(par_izq, cadena[i]);
+      |                                           ~~~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:133:33: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  133 |          if(cadena[i] == ')' && (int)(top(par_izq) - cadena[i]) == -1 ) pop(par_izq);
+      |                                 ^
+exercises.c:134:38: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  134 |          else if(cadena[i] == '}' && (int)(top(par_izq) - cadena[i]) == -2 ) pop(par_izq);
+      |                                      ^
+exercises.c:135:38: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  135 |          else if(cadena[i] == ']' && (int)(top(par_izq) - cadena[i]) == -2 ) pop(par_izq);
+      |                                      ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8d63c9b
