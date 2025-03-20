@@ -132,9 +132,9 @@ int parentesisBalanceados(char *cadena){
       if(i < mitad) push(par_izq, cadena[i]);
       else{
          int centinela = 0;
-         if (cadena[i] == ')' && top(par_izq) < cadena[i]) centinela = 1;
-         if (cadena[i] == '}' && top(par_izq) < cadena[i]) centinela = 1;
-         if (cadena[i] == ']' && top(par_izq) < cadena[i]) centinela = 1;
+         if (cadena[i] == ')' ) centinela = 1;
+         if (cadena[i] == '}' ) centinela = 1;
+         if (cadena[i] == ']' ) centinela = 1;
          if(centinela = 0) return 0;
          else pop(par_izq); 
       }
