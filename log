@@ -2430,3 +2430,19 @@ exercises.c:138:30: error: suggest parentheses around '&&' within '||' [-Werror=
 cc1.exe: all warnings being treated as errors
 Compilation failed
 b7d71a4
+Thu, Mar 20, 2025  6:50:49 PM: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:136:50: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          if(cadena[i] == ')' && strcmp(top(pila),'(') != 0) return 0;
+      |                                                  ^~~
+      |                                                  |
+      |                                                  int
+In file included from test.c:3:
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'int'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+Compilation failed
+9aa3d04
