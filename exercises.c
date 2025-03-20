@@ -137,8 +137,8 @@ int parentesisBalanceados(char *cadena){
    char izq = first(par_izq);
    char der = first(par_der); 
 
-   while(izq != NULL){
-      if(der == ')' && izq == '(' || der == '}' && izq == '{' || der == ']' && izq == '['){
+   while(izq != NULL && der != NULL){
+      if( izq == '(' && der == ')'  || izq == '{' && der == '}'|| izq == '[' && der == ']'){
          izq = next(par_izq);
          der = next(par_der);   
       }

@@ -1663,3 +1663,59 @@ exercises.c:143:14: error: assignment to 'char' from 'void *' makes integer from
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7b471fe
+Thu, Mar 20, 2025  5:35:24 PM: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:133:46: error: passing argument 2 of 'pushFront' makes pointer from integer without a cast [-Wint-conversion]
+  133 |       if(i < mitad) pushFront(par_izq, cadena[i]);
+      |                                        ~~~~~~^~~
+      |                                              |
+      |                                              char
+In file included from exercises.c:6:
+arraylist.h:17:31: note: expected 'void *' but argument is of type 'char'
+   17 | void pushFront(List *L, void *dato);
+      |                         ~~~~~~^~~~
+exercises.c:134:36: error: passing argument 2 of 'pushBack' makes pointer from integer without a cast [-Wint-conversion]
+  134 |       else pushBack(par_der, cadena[i]);
+      |                              ~~~~~~^~~
+      |                                    |
+      |                                    char
+arraylist.h:20:30: note: expected 'void *' but argument is of type 'char'
+   20 | void pushBack(List *L, void *dato);
+      |                        ~~~~~~^~~~
+exercises.c:137:15: error: initialization of 'char' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  137 |    char izq = first(par_izq);
+      |               ^~~~~
+exercises.c:138:15: error: initialization of 'char' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  138 |    char der = first(par_der);
+      |               ^~~~~
+exercises.c:140:14: error: comparison between pointer and integer [-Werror]
+  140 |    while(izq != NULL && der != NULL){
+      |              ^~
+exercises.c:140:29: error: comparison between pointer and integer [-Werror]
+  140 |    while(izq != NULL && der != NULL){
+      |                             ^~
+exercises.c:141:22: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  141 |       if( izq == '(' && der == ')'  || izq == '{' && der == '}'|| izq == '[' && der == ']'){
+      |           ~~~~~~~~~~~^~~~~~~~~~~~~
+exercises.c:141:78: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  141 |       if( izq == '(' && der == ')'  || izq == '{' && der == '}'|| izq == '[' && der == ']'){
+      |                                                                   ~~~~~~~~~~~^~~~~~~~~~~~~
+exercises.c:142:14: error: assignment to 'char' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  142 |          izq = next(par_izq);
+      |              ^
+exercises.c:143:14: error: assignment to 'char' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  143 |          der = next(par_der);
+      |              ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+734eff9
