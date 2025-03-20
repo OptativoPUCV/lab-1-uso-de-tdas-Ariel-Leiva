@@ -795,3 +795,39 @@ exercises.c:133:73: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 6ee87ea
+Thu, Mar 20, 2025  4:04:08 PM: 
+ exercises.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'copia_pila':
+exercises.c:97:18: error: comparison between pointer and integer [-Werror]
+   97 |    while(top(P1) != -1){
+      |                  ^~
+exercises.c:102:19: error: comparison between pointer and integer [-Werror]
+  102 |    while(top(aux) != -1){
+      |                   ^~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:130:24: error: comparison between pointer and integer [-Werror]
+  130 |    for(size_t i = 0; i < largo; i++){
+      |                        ^
+exercises.c:131:49: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Wint-conversion]
+  131 |       if(i < (largoChar/2)) push(par_izq, cadena[i]);
+      |                                           ~~~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from exercises.c:7:
+stack.h:11:31: note: expected 'void *' but argument is of type 'char'
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+exercises.c:133:27: error: comparison between pointer and integer [-Werror]
+  133 |          if( top(par_izq) == cadena[i] || top(par_izq) == cadena[i] || top(par_izq) == cadena[i] ) return 0;
+      |                           ^~
+exercises.c:133:56: error: comparison between pointer and integer [-Werror]
+  133 |          if( top(par_izq) == cadena[i] || top(par_izq) == cadena[i] || top(par_izq) == cadena[i] ) return 0;
+      |                                                        ^~
+exercises.c:133:85: error: comparison between pointer and integer [-Werror]
+  133 |          if( top(par_izq) == cadena[i] || top(par_izq) == cadena[i] || top(par_izq) == cadena[i] ) return 0;
+      |                                                                                     ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+53ec81d
