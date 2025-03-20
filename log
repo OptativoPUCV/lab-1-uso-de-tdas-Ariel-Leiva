@@ -2593,3 +2593,19 @@ Thu, Mar 20, 2025  7:06:43 PM:
  tests:  7|1
 total_score: 60/70
 f64aa0a
+Thu, Mar 20, 2025  7:09:37 PM: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:136:50: error: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          if(cadena[i] == ')' && strcmp(top(pila),'(') != 0) return 0;
+      |                                                  ^~~
+      |                                                  |
+      |                                                  int
+In file included from test.c:3:
+C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argument is of type 'int'
+   63 |   int __cdecl strcmp(const char *_Str1,const char *_Str2);
+      |                                        ~~~~~~~~~~~~^~~~~
+Compilation failed
+a6a65e1
