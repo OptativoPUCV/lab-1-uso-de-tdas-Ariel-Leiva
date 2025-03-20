@@ -637,3 +637,9 @@ stack.h:11:31: note: expected 'void *' but argument is of type 'int'
       |                         ~~~~~~^~~~
 Compilation failed
 a432a1d
+Wed, Mar 19, 2025 10:42:38 PM: 
+ exercises.c | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+ tests:  4|1
+total_score: 50/70
+6cdbf39
