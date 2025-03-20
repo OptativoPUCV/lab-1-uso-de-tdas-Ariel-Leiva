@@ -124,7 +124,7 @@ size_t largo(char *palabra){
 int parentesisBalanceados(char *cadena){
    Stack *par_izq = create_stack(); 
    size_t largoChar = largo(cadena);
-   
+   printf("HOLAOLHALHOALHAOHLA");
    if(largoChar % 2 != 0) return 0;
 
    size_t mitad = largoChar / 2;
