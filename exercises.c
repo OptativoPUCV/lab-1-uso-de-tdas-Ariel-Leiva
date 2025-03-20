@@ -131,9 +131,9 @@ int parentesisBalanceados(char *cadena){
       if(i < (largoChar/2)) push(par_izq, cadena[i]);
       else{
          int centinela = 0;
-         if(cadena[i] == ')' && (int)(top(par_izq) - cadena[i]) == -1 ) centinela = 1;
-         else if(cadena[i] == '}' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
-         else if(cadena[i] == ']' && (int)(top(par_izq) - cadena[i]) == -2 ) centinela = 1;
+         if(cadena[i] == ')' && strcmp(top(par_izq), cadena[i]) == -1 ) centinela = 1;
+         if(cadena[i] == '}' && strcmp(top(par_izq), cadena[i]) == -2 ) centinela = 1;
+         if(cadena[i] == ']' && strcmp(top(par_izq), cadena[i]) == -2 ) centinela = 1;
          if(centinela = 0) return 0;
          else pop(par_izq) 
       }
