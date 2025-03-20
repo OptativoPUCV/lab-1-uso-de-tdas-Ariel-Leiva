@@ -122,21 +122,19 @@ size_t largo(char *palabra){
 }
 
 int parentesisBalanceados(char *cadena){
-   Stack *par_izq = create_stack(); 
+   Stack *par_izq = create_stack();
    size_t largoChar = largo(cadena);
-   printf("HOLAOLHALHOALHAOHLA");
+
    if(largoChar % 2 != 0) return 0;
 
-   size_t mitad = largoChar / 2;
+   size_t mitad = (largoChar / 2);
    for(size_t i = 0; i < largoChar; i++){
-      if(i < mitad) push(par_izq, cadena[i]);
+      if(i < mitad) pushFront(par_izq, cadena[i]);
       else{
-         int centinela = 0;
-         if (cadena[i] == ')' ) centinela = 1;
-         if (cadena[i] == '}' ) centinela = 1;
-         if (cadena[i] == ']' ) centinela = 1;
-         if(centinela = 0) return 0;
-         else pop(par_izq); 
+         if(cadena[i] == ')' && top(par_izq) == '(') pop(par_izq);
+         else if (cadena[i] == '}' && top(par_izq) == '{') pop(par_izq);
+         else if (cadena[i] == ']' && top(par_izq) == '[') pop(par_izq);
+         else return 0;
       }
    }
    return 1;
