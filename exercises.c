@@ -129,7 +129,7 @@ int parentesisBalanceados(char *cadena){
 
    size_t mitad = (largoCadena / 2);
    for(size_t i = 0; i < largoCadena; i++){
-      if(i < largoCadena) push(pila, cadena[i]);
+      if(i < mitad) push(pila, cadena[i]);
 
       else{
          if(cadena[i] == ')' && top(pila) != '(') return 0;
@@ -138,7 +138,6 @@ int parentesisBalanceados(char *cadena){
          else pop(pila);
       }
    }
-
    return 1;  
 }
 
