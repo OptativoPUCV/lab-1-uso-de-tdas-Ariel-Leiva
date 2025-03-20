@@ -2256,3 +2256,14 @@ exercises.c:136:25: error: initialization of 'char' from 'void *' makes integer 
       |                         ^~~
 Compilation failed
 8754b19
+Thu, Mar 20, 2025  6:17:13 PM: 
+ exercises.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:136:43: error: comparison between pointer and integer [-Werror]
+  136 |          if(cadena[i] == ')' && top(pila) != '(') return 0;
+      |                                           ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+12556b0
