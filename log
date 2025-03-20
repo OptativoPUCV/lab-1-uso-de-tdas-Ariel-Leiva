@@ -2656,3 +2656,29 @@ exercises.c:137:108: error: suggest parentheses around '&&' within '||' [-Werror
 cc1.exe: all warnings being treated as errors
 Compilation failed
 6449ab5
+Thu, Mar 20, 2025  8:57:00 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:136:27: error: initialization of 'char *' from 'char' makes pointer from integer without a cast [-Wint-conversion]
+  136 |          char *elemento = *(char *)top(pila);
+      |                           ^
+exercises.c:137:42: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |                                          ^~
+exercises.c:137:81: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |                                                                                 ^~
+exercises.c:137:30: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+exercises.c:137:120: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |                                                                                                                        ^~
+exercises.c:137:108: error: suggest parentheses around '&&' within '||' [-Werror=parentheses]
+  137 |          if(cadena[i] == ')' && elemento != '(' || cadena[i] == '}' && elemento != '{' || cadena[i] == ']' && elemento != '[') return 0;
+      |                                                                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+abc306a
