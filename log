@@ -2609,3 +2609,30 @@ C:/msys64/ucrt64/include/string.h:63:52: note: expected 'const char *' but argum
       |                                        ~~~~~~~~~~~~^~~~~
 Compilation failed
 a6a65e1
+Thu, Mar 20, 2025  7:13:43 PM: 
+ exercises.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:137:43: error: comparison between pointer and integer [-Werror]
+  137 |          if(cadena[i] == ')' && top(pila) != '(') return 0;
+      |                                           ^~
+exercises.c:138:48: error: comparison between pointer and integer [-Werror]
+  138 |          else if(cadena[i] == '}' && top(pila) != '{') return 0;
+      |                                                ^~
+exercises.c:139:48: error: comparison between pointer and integer [-Werror]
+  139 |          else if(cadena[i] == ']' && top(pila) != '[') != 0) return 0;
+      |                                                ^~
+exercises.c:139:56: error: expected expression before '!=' token
+  139 |          else if(cadena[i] == ']' && top(pila) != '[') != 0) return 0;
+      |                                                        ^~
+exercises.c:139:10: error: this 'else' clause does not guard... [-Werror=misleading-indentation]
+  139 |          else if(cadena[i] == ']' && top(pila) != '[') != 0) return 0;
+      |          ^~~~
+exercises.c:139:60: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+  139 |          else if(cadena[i] == ']' && top(pila) != '[') != 0) return 0;
+      |                                                            ^
+exercises.c:139:60: error: expected statement before ')' token
+cc1.exe: all warnings being treated as errors
+Compilation failed
+2e45b5e
