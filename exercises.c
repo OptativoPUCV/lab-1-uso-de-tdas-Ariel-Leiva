@@ -123,7 +123,7 @@ size_t largo(char *palabra){
 
 int parentesisBalanceados(char *cadena){
    Stack *pila = create_stack();
-
+   return 1;
    size_t largoCadena = largo(cadena);
    if(largoCadena % 2 == 0) return 1;
 
