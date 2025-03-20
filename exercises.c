@@ -125,9 +125,10 @@ int parentesisBalanceados(char *cadena){
    Stack *pila = create_stack();
    
    size_t largoCadena = largo(cadena);
-   if(largoCadena % 2 != 0) return 0;
+   if(largoCadena % 2 == 0) {
 
    size_t mitad = (largoCadena / 2);
+
    for(size_t i = 0; i < largoCadena; i++){
       if(i < mitad) push(pila, cadena[i]);
 
@@ -138,7 +139,9 @@ int parentesisBalanceados(char *cadena){
          pop(pila);
       }
    }
-   return 1;  
+   return 1;
+   }
+   else return 0;  
 }
 
 
