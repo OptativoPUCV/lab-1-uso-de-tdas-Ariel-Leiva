@@ -114,23 +114,19 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-size_t largo(char *palabra){
-   size_t contador = 0;
-   while(palabra[contador] != '\0')
-      contador++;
-   return contador;   
-}
-
 int parentesisBalanceados(char *cadena){
    Stack *pila = create_stack();
    
-   size_t largoCadena = largo(cadena);
+   size_t largoCadena = strlen(cadena);
    if(largoCadena % 2 != 0) return 0;
  
    size_t mitad = (largoCadena / 2);
-
    for(size_t i = 0; i < largoCadena; i++){
-      if(i < mitad) push(pila, &cadena[i]);
+      
+      if(i < mitad) {
+         if(cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']') return 0;
+         push(pila, &cadena[i]);
+      }
 
       else{
          char elemento = *(char *)top(pila); 
